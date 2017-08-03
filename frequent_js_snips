@@ -1,0 +1,144 @@
+var lodash = require('lodash');
+
+// var fs = function (n) 
+// {
+//   if (n===1) 
+//   {
+//     return [0, 1];
+//   } 
+//   else 
+//   {
+//     console.log('n-before',n);
+//     var s = fs(n - 1);
+//     console.log('s-before push',s);
+//     console.log('n-after',n);
+//     s.push(s[s.length - 1] + s[s.length - 2]);
+//     console.log('s-after push',s);
+//     return s;
+//   }
+// };
+
+// console.log(fs(4));
+// var oldnum=0,newnum=1,arr=[0,1];
+// function fib(n) {
+//   if (n===1) return arr;
+//   else n--;
+//   newnum = newnum + oldnum;
+//   oldnum = newnum - oldnum;
+//   arr.push(newnum);
+//   fib(n);
+//   return arr;
+// }
+
+// fib(10);
+// var newnum=1;
+// function fact(n) {
+//   if (n===1) return newnum;
+//   newnum *= (n);
+//   n--;
+//   fact(n);
+//   return newnum;
+// }
+// fact(5);
+
+// var oNum=0;var nNum=1;var arr=[0,1];
+// function fib(n) {
+//   if (n===1) return arr;
+//   else n--;
+//   nNum = nNum + oNum;
+//   oNum = nNum - oNum;
+//   arr.push(nNum);
+//   fib(n);
+//   return arr;
+// }
+// fib(10);
+
+// // if string has all unique chars
+// var str = 'asdfgh';
+// function checkUniq(str) {
+// for (var i=0;i<=str.length;i++) {
+//   if (str.indexOf(str[i]) !== str.lastIndexOf(str[i])) return false;
+// }
+// return true;
+// }
+// checkUniq(str);
+
+// // check longest word in string;
+// var str = "this code is to find the loooongest word in the phrase";
+
+// function findLong(str) {
+//   var splitted = str.split(' ');
+//   var word;
+//   console.log('splitted',splitted);
+//   for (var i=0;i<splitted.length;i++) {
+//     if (!word) word = splitted[i];
+//     if (word.length < splitted[i].length) {
+//       word = splitted[i];
+//     }
+//   }
+//   return word;
+// }
+
+// findLong(str);
+
+// // permutations
+// var str1 = "baseball";
+// var str2 = "ballbase";
+// function check(str1,str2) {
+// var first = str1.split('');
+// var second = str2.split('');
+// first =first.sort().join('');
+// second = second.sort().join('');
+// console.log('first',first);
+// console.log('second',second);
+// }
+
+// check(str1,str2);
+
+// // sum of Range
+
+// function sum(range) {
+//   var sum = 0;
+//   for (var i=range[0];i<=range[1];i++) {
+//     sum+=i;
+//   }
+//   return sum;
+// }
+// sum([3,11]);
+
+// // palindrome
+// var str = 'adadada';
+// function check(str) {
+//   var flag = true;
+//   for (var i=0,j=str.length-1;i<=str.length;i++,j--) {
+//     if (str.charAt(i)!==str.charAt(j)) {
+//       flag = false;
+//     }
+//   }
+//   return flag;
+// }
+// check(str);
+
+//fibo
+// var oldnum = 0, newnum = 1, arr=[0,1];
+// function fib(n) {
+//   if (n<2) return arr;
+//   else n--;
+//   newnum = newnum + oldnum;
+//   oldnum = newnum - oldnum;
+//   arr.push(newnum);
+//   fib(n);
+//   return arr;
+// }
+// fib(10);
+
+var comb = '(())()(())()()()';
+function check (comb) {
+var seq = comb.split('');
+return seq.reduce(function (prev,sq) {
+  if (sq === '(') return --prev;
+  if (sq === ')') return ++prev;
+  return prev;
+},0)
+}
+console.log(check(comb));
